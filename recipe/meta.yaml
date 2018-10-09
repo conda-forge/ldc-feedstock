@@ -15,7 +15,7 @@ source:
   fn: ldc2-{{ version }}-windows-x64.7z                                                                          # [win]
 
 build:
-  number: 0
+  number: 1000
   skip: True  # [win and vc<14]
 
 requirements:
