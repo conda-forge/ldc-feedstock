@@ -15,7 +15,7 @@ source:
   fn: ldc2-{{ version }}-windows-x64.7z                                                                          # [win]
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
 
 requirements:
@@ -31,9 +31,6 @@ requirements:
       - libedit                  # [unix]
       - ncurses                  # [unix]
       - curl                     # [unix]
-      - llvmdev                  # [unix]
-    run:
-      - ncurses                  # [unix]
 
 test:
   commands:
