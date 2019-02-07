@@ -1,7 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 c_compiler:
-- toolchain_c
+- clang
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -9,7 +9,7 @@ channel_targets:
 curl:
 - '7.59'
 cxx_compiler:
-- toolchain_cxx
+- clangxx
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
