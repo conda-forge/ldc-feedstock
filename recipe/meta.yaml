@@ -31,6 +31,7 @@ requirements:
       - libedit                  # [unix]
       - ncurses                  # [unix]
       - curl                     # [unix]
+      - llvmdev                  # [unix]
 
 test:
   commands:
