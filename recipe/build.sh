@@ -4,8 +4,7 @@ set -eu -o pipefail
 # bootstrap with 0.17.x which is the last version that doesn't require a host D compiler.
 # See https://wiki.dlang.org/Building_LDC_from_source
 
-wget https://github.com/ldc-developers/ldc/releases/download/v0.17.6/ldc-0.17.6-src.tar.gz
-tar xvfz ldc-0.17.6-src.tar.gz
+curl -sL https://github.com/ldc-developers/ldc/releases/download/v0.17.6/ldc-0.17.6-src.tar.gz | tar xz
 pushd ldc-0.17.6-src
 mkdir build
 cd build
