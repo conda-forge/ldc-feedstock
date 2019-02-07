@@ -12,10 +12,9 @@ source:
   # Use the pre-built binaries for windows.
   url: https://github.com/ldc-developers/ldc/releases/download/v{{ version }}/ldc2-{{ version }}-windows-x64.7z  # [win]
   sha256: ce6fb5f0008659b46051641239fb3c573083d70fd24b73225ab3ebe3e309e2ed  # [win]
-  fn: ldc2-{{ version }}-windows-x64.7z                                                                          # [win]
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
 
 requirements:
@@ -32,8 +31,6 @@ requirements:
       - ncurses                  # [unix]
       - curl                     # [unix]
       - llvmdev                  # [unix]
-    run:
-      - ncurses                  # [unix]
 
 test:
   commands:
