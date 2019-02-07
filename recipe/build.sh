@@ -1,6 +1,9 @@
 #!/bin/bash
 set -eu -o pipefail
 
+# https://github.com/conda-forge/llvmdev-feedstock/issues/54
+rm -rf $BUILD_PREFIX/lib/libLLVM*.a $BUILD_PREFIX/lib/libclang*.a
+
 # bootstrap with 0.17.x which is the last version that doesn't require a host D compiler.
 # See https://wiki.dlang.org/Building_LDC_from_source
 
