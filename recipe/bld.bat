@@ -1,3 +1,3 @@
 dir
 
-xcopy /S /I /E . %LIBRARY_PREFIX%
+xcopy /S /I /E LICENSE bin etc import lib %LIBRARY_PREFIX%
