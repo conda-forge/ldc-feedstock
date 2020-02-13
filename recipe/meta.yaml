@@ -39,8 +39,7 @@ test:
 about:
   home: https://github.com/ldc-developers/ldc
   license: BSD, MIT, LDC
-  license_file: LICENSE                                  # [unix]
-  license_file: ldc2-{{ version }}-windows-x64\LICENSE   # [win]
+  license_file: LICENSE
   summary: 'The LLVM-based D Compiler'
 
   description: |
