@@ -1,5 +1,5 @@
 {% set name = "ldc" %}
-{% set version = "1.17.0" %}
+{% set version = "1.19.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/ldc-developers/ldc/releases/download/v{{ version }}/ldc-{{ version }}-src.tar.gz       # [unix]
-  sha256: 6a2fa91a53d954361832591488241c92adb497842069077425d73c9b9d2c4fa9  # [unix]
+  sha256: c7056c10ab841762b84ae9ea6ab083b131924d683e1e0d8a18aa496c537213ae  # [unix]
 
   # Use the pre-built binaries for windows.
   url: https://github.com/ldc-developers/ldc/releases/download/v{{ version }}/ldc2-{{ version }}-windows-x64.7z  # [win]
-  sha256: a36875ca90287c37e4dec63b98b8bc178aa1f3dcc1982114656c8fe576f1ee47  # [win]
+  sha256: e0038e94174af64726fa713aa63d0fbf5290e911905e86901e74553604eb8a6c  # [win]
 
 build:
   number: 0
