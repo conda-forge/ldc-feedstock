@@ -17,14 +17,7 @@ Current build status
 ====================
 
 
-<table><tr>
-    <td>Appveyor</td>
-    <td>
-      <a href="https://ci.appveyor.com/project/conda-forge/ldc-feedstock/branch/master">
-        <img alt="windows" src="https://img.shields.io/appveyor/ci/conda-forge/ldc-feedstock/master.svg?label=Windows">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
@@ -52,10 +45,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win_vc14</td>
+              <td>win</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6046&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ldc-feedstock?branchName=master&jobName=win&configuration=win_vc14" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ldc-feedstock?branchName=master&jobName=win&configuration=win_" alt="variant">
                 </a>
               </td>
             </tr>
