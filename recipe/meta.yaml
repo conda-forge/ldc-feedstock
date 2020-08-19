@@ -1,36 +1,36 @@
 {% set name = "ldc" %}
-{% set version = "1.20.0" %}
+{% set version = "1.23.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/ldc-developers/ldc/releases/download/v{{ version }}/ldc-{{ version }}-src.tar.gz       # [unix]
-  sha256: 49c9fdfe3a51c978385aae94f2e102f306102f6282215638f2ae3fb9ea8d3ab9  # [unix]
+  url: https://github.com/ldc-developers/ldc/releases/download/v{{ version }}/ldc-{{ version }}-src.tar.gz  # [unix]
+  sha256: 6d18d233fb3a666113827bdb7d96a6ff0b54014bbeb76d0cd12a892e8490afb9  # [unix]
 
   # Use the pre-built binaries for windows.
   url: https://github.com/ldc-developers/ldc/releases/download/v{{ version }}/ldc2-{{ version }}-windows-x64.7z  # [win]
-  sha256: 95218ef73f7cabad8139e7fd4c165b8a2d05db3be3e996526bdaab78d220f0ad  # [win]
+  sha256: 0aec6f6dba133e05a2723cf1c76c65001c3bdc20117e38a99d849a223bfbb448  # [win]
 
 build:
-  number: 1
-  skip: True  # [win and vc<14]
+  number: 0
+  skip: true  # [win and vc<14]
 
 requirements:
-    build:
-      - {{ compiler('c') }}      # [unix]
-      - {{ compiler('cxx') }}    # [unix]
-      - git                      # [unix]
-      - cmake                    # [unix]
-      - ninja                    # [unix]
-      - 7za                      # [win]
-    host:
-      - libconfig                # [unix]
-      - libedit                  # [unix]
-      - ncurses                  # [unix]
-      - curl                     # [unix]
-      - llvmdev <=7              # [unix]
+  build:
+    - {{ compiler('c') }}        # [unix]
+    - {{ compiler('cxx') }}      # [unix]
+    - git                        # [unix]
+    - cmake                      # [unix]
+    - ninja                      # [unix]
+    - 7za                        # [win]
+  host:
+    - libconfig                  # [unix]
+    - libedit                    # [unix]
+    - ncurses                    # [unix]
+    - curl                       # [unix]
+    - llvmdev <=7                # [unix]
 
 test:
   commands:
@@ -40,13 +40,13 @@ about:
   home: https://github.com/ldc-developers/ldc
   license: BSD, MIT, LDC
   license_file: LICENSE
-  summary: 'The LLVM-based D Compiler'
+  summary: The LLVM-based D Compiler
 
   description: |
     The LDC project provides a portable D programming language compiler with modern optimization and code generation capabilities.
     The compiler uses the official DMD frontend to support the latest version of D2, and relies on the LLVM Core libraries for code generation.
   doc_url: https://wiki.dlang.org/LDC
-  dev_url: https://github.com/ldc-developers/ldc 
+  dev_url: https://github.com/ldc-developers/ldc
 
 extra:
   recipe-maintainers:
