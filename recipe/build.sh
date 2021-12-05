@@ -24,6 +24,9 @@ set -eu -o pipefail
 # popd
 # rm -rf ldc-0.17.6-src ldc-0.17.6-src.tar.gz
 
+# install ldc for bootstrapping
+mamba install ldc -p ${BUILD_PREFIX}
+
 # Build latest version
 mkdir build
 cd build

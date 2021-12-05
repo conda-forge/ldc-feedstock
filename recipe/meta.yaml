@@ -24,7 +24,6 @@ requirements:
     - cmake                    # [unix]
     - ninja                    # [unix]
     - 7za                      # [win]
-    - ldc 1.20
   host:
     - libconfig                # [unix]
     - libedit                  # [unix]
