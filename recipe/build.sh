@@ -12,6 +12,7 @@ pushd ldc-0.17.6-src
 mkdir build
 cd build
 cmake -G Ninja \
+      ${CMAKE_ARGS} \
       -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install \
       -DCMAKE_PREFIX_PATH=$PREFIX \
@@ -26,12 +27,13 @@ rm -rf ldc-0.17.6-src ldc-0.17.6-src.tar.gz
 mkdir build
 cd build
 cmake -G Ninja \
+      ${CMAKE_ARGS} \
       -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_INSTALL_PREFIX=$PREFIX \
       -DCMAKE_PREFIX_PATH=$PREFIX \
       -DBUILD_SHARED_LIBS=ON \
       -DD_COMPILER=$SRC_DIR/install/bin/ldmd2 \
       ..
+
 ninja install
 ldc2 -version
-
