@@ -30,7 +30,7 @@ requirements:
       - libedit                  # [unix]
       - ncurses                  # [unix]
       - curl                     # [unix]
-      - llvmdev >=6,<=12              # [unix]
+      - clangdev >=6,<=12              # [unix]
 
 test:
   commands:
