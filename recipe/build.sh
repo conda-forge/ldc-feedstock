@@ -5,7 +5,7 @@ set -x
 # https://github.com/conda-forge/llvmdev-feedstock/issues/54
 #rm -rf $BUILD_PREFIX/lib/libLLVM*.a $BUILD_PREFIX/lib/libclang*.a
 
-mamba install -y ldc -p ${BUILD_PREFIX}
+mamba install -y ldc=1.17 -p ${BUILD_PREFIX}
 find ${BUILD_PREFIX} -name ldmd2
 
 # Build latest version
