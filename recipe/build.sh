@@ -23,7 +23,7 @@ set -x
 #popd
 #rm -rf ldc-0.17.6-src ldc-0.17.6-src.tar.gz
 # bootstrap with a previous ldc
-mamba install ldc -p ${BUILD_PREFIX}
+mamba install -y ldc -p ${BUILD_PREFIX}
 
 # Build latest version
 mkdir build
