@@ -24,6 +24,8 @@ ldc2 -version
 
 cd ..
 rm -rf build
+
+mkdir build
 cd build
 cmake -G Ninja \
       ${CMAKE_ARGS} \
