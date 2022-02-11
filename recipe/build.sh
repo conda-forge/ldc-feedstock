@@ -22,3 +22,16 @@ cmake -G Ninja \
 ninja install
 ldc2 -version
 
+cd ..
+rm -rf build
+cd build
+cmake -G Ninja \
+      ${CMAKE_ARGS} \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX=$PREFIX \
+      -DCMAKE_PREFIX_PATH=$PREFIX \
+      -DBUILD_SHARED_LIBS=ON \
+      -DD_COMPILER=${PREFIX}/bin/ldmd2 \
+      ..
+ninja install
+ldc2 -version
