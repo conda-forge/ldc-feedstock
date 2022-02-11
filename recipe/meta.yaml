@@ -32,9 +32,8 @@ requirements:
       - ncurses                  # [unix]
       - curl                     # [unix]
       - clangdev >=6,<=12        # [unix]
-      - libllvm >=6,<=12         # [unix]
     run:
-      - {{ pin_compatible('libllvm') }}  # [unix]
+      - libllvm12         # [unix]
 
 test:
   commands:
