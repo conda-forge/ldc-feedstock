@@ -1,5 +1,6 @@
 #!/bin/bash
 set -eu -o pipefail
+set -x
 
 # https://github.com/conda-forge/llvmdev-feedstock/issues/54
 #rm -rf $BUILD_PREFIX/lib/libLLVM*.a $BUILD_PREFIX/lib/libclang*.a
