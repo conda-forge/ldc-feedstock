@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/ldc-developers/ldc/releases/download/v{{ version }}/ldc-{{ version }}-src.tar.gz       # [unix]
-  sha256: 49c9fdfe3a51c978385aae94f2e102f306102f6282215638f2ae3fb9ea8d3ab9 # [unix]
+  sha256: 49c9fdfe3a51c978385aae94f2e102f306102f6282215638f2ae3fb9ea8d3ab9  # [unix]
 
   # Use the pre-built binaries for windows.
   url: https://github.com/ldc-developers/ldc/releases/download/v{{ version }}/ldc2-{{ version }}-windows-x64.7z  # [win]
-  sha256: 26bb3ece7774ef70d9c7485eab5fbc182d4e74411e4a8d2f339e9b421a76f069 # [win]
+  sha256: 26bb3ece7774ef70d9c7485eab5fbc182d4e74411e4a8d2f339e9b421a76f069  # [win]
 
 build:
   number: 0
