@@ -19,7 +19,7 @@ cmake -G Ninja \
       -DCMAKE_INSTALL_PREFIX=$PREFIX \
       -DCMAKE_PREFIX_PATH=$PREFIX \
       -DBUILD_SHARED_LIBS=ON \
-      -DD_COMPILER=~/bin/ldmd2 \
+      -DD_COMPILER=ldmd2 \
       ..
 ninja install
 ldc2 -version
