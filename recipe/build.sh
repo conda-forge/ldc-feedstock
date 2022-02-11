@@ -8,7 +8,7 @@ set -x
 #mamba install -y ldc -p ${BUILD_PREFIX}
 #find ${BUILD_PREFIX} -name ldmd2
 curl -fsS https://dlang.org/install.sh | bash -s ldc
-find ~/ -name ldmd2
+source ~/dlang/ldc-1.28.1/activate
 
 # Build latest version
 mkdir build
@@ -26,6 +26,7 @@ ldc2 -version
 
 cd ..
 rm -rf build
+deactivate
 
 mkdir build
 cd build
