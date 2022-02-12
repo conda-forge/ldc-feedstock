@@ -32,7 +32,8 @@ requirements:
       - ncurses                  # [unix]
       - curl                     # [unix]
       - clangdev >=6,<=12        # [unix]
-      - llvmdev                     # [unix]
+      - llvmdev                  # [unix]
+      - llvm                     # [unix]
 
 test:
   commands:
