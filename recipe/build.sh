@@ -2,13 +2,15 @@
 set -eu -o pipefail
 set -x
 
-# https://github.com/conda-forge/llvmdev-feedstock/issues/54
-#rm -rf $BUILD_PREFIX/lib/libLLVM*.a $BUILD_PREFIX/lib/libclang*.a
-
-#mamba install -y ldc -p ${BUILD_PREFIX}
-#find ${BUILD_PREFIX} -name ldmd2
-curl -fsS https://dlang.org/install.sh | bash -s ldc
-source ~/dlang/ldc-1.28.1/activate
+# In the future we can just use mamba install to get a previous version on all platforms
+if [[ "$OSTYPE" == "darwin"* ]]; then
+   curl -fsS https://dlang.org/install.sh | bash -s ldc
+   source ~/dlang/ldc-1.28.1/activate
+   DCMP=ldmd2
+else
+   mamba install -y ldc -p ${BUILD_PREFIX}
+   DCMP=${BUILD_PREFIX}/bin/ldmd2
+fi
 
 # Build latest version
 mkdir build
@@ -19,15 +21,18 @@ cmake -G Ninja \
       -DCMAKE_INSTALL_PREFIX=$PREFIX \
       -DCMAKE_PREFIX_PATH=$PREFIX \
       -DBUILD_SHARED_LIBS=ON \
-      -DD_COMPILER=ldmd2 \
+      -DD_COMPILER=$DCMP \
       ..
 ninja install
 ldc2 -version
 
 cd ..
 rm -rf build
-deactivate
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    deactivate
+fi
 
+# If we don't do this a second time, we can end up linking to the wrong version of libphobos et al.
 mkdir build
 cd build
 cmake -G Ninja \
