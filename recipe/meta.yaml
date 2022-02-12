@@ -1,39 +1,39 @@
 {% set name = "ldc" %}
-{% set version = "1.28.0" %}
+{% set version = "1.28.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/ldc-developers/ldc/releases/download/v{{ version }}/ldc-{{ version }}-src.tar.gz       # [unix]
-  sha256: 17fee8bb535bcb8cda0a45947526555c46c045f302a7349cc8711b254e54cf09  # [unix]
+  url: https://github.com/ldc-developers/ldc/releases/download/v{{ version }}/ldc-{{ version }}-src.tar.gz  # [unix]
+  sha256: 654958bca5378cd97819f2ef61d3f220aa652a9d2b5ff41d6f2109302ae6eb94  # [unix]
 
   # Use the pre-built binaries for windows.
   url: https://github.com/ldc-developers/ldc/releases/download/v{{ version }}/ldc2-{{ version }}-windows-x64.7z  # [win]
-  sha256: 26bb3ece7774ef70d9c7485eab5fbc182d4e74411e4a8d2f339e9b421a76f069  # [win]
+  sha256: 7c2a2a6028eed77e671142ed37f86d8aca3f718ced4b7362b3fe9b189fbeb865  # [win]
 
 build:
   number: 0
-  skip: True  # [win and vc<14]
+  skip: true  # [win and vc<14]
 
 requirements:
-    build:
-      - {{ compiler('c') }}      # [unix]
-      - {{ compiler('cxx') }}    # [unix]
-      - git                      # [unix]
-      - cmake                    # [unix]
-      - make                     # [unix]
-      - ninja                    # [unix]
-      - 7za                      # [win]
-    host:
-      - libconfig                # [unix]
-      - libedit                  # [unix]
-      - ncurses                  # [unix]
-      - curl                     # [unix]
-      - clangdev >=6,<=12        # [unix]
-      - llvmdev                  # [unix]
-      - llvm                     # [unix]
+  build:
+    - {{ compiler('c') }}        # [unix]
+    - {{ compiler('cxx') }}      # [unix]
+    - git                        # [unix]
+    - cmake                      # [unix]
+    - make                       # [unix]
+    - ninja                      # [unix]
+    - 7za                        # [win]
+  host:
+    - libconfig                  # [unix]
+    - libedit                    # [unix]
+    - ncurses                    # [unix]
+    - curl                       # [unix]
+    - clangdev >=6,<=12          # [unix]
+    - llvmdev                    # [unix]
+    - llvm                       # [unix]
 
 test:
   commands:
@@ -43,13 +43,13 @@ about:
   home: https://github.com/ldc-developers/ldc
   license: BSD, MIT, LDC
   license_file: LICENSE
-  summary: 'The LLVM-based D Compiler'
+  summary: The LLVM-based D Compiler
 
   description: |
     The LDC project provides a portable D programming language compiler with modern optimization and code generation capabilities.
     The compiler uses the official DMD frontend to support the latest version of D2, and relies on the LLVM Core libraries for code generation.
   doc_url: https://wiki.dlang.org/LDC
-  dev_url: https://github.com/ldc-developers/ldc 
+  dev_url: https://github.com/ldc-developers/ldc
 
 extra:
   recipe-maintainers:
