@@ -21,6 +21,7 @@ requirements:
   build:
     - {{ compiler('c') }}        # [unix]
     - {{ compiler('cxx') }}      # [unix]
+    - {{ stdlib('c') }}          # [unix]
     - git                        # [unix]
     - cmake                      # [unix]
     - make                       # [unix]
