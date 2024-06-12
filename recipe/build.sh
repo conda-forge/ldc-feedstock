@@ -5,7 +5,7 @@ set -x
 # In the future we can just use mamba install to get a previous version on all platforms
 if [[ "$OSTYPE" == "darwin"* ]]; then
    curl -fsS https://dlang.org/install.sh | bash -s ldc
-   source ~/dlang/ldc-1.28.1/activate
+   source ~/dlang/ldc-1.38.0/activate
    DCMP=ldmd2
 else
    mamba install -y ldc -p ${BUILD_PREFIX}
