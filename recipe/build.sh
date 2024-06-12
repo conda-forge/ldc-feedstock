@@ -2,9 +2,8 @@
 set -eu -o pipefail
 set -x
 
-ARCH=$(uname -m)
 # In the future we can just use mamba install to get a previous version on all platforms
-if [[ "${ARCH}" == "aarch64"* ]]; then
+if [[ "${target_platform}" == "linux-aarch64" ]]; then
    curl -fsS https://dlang.org/install.sh | bash -s ldc
    source ~/dlang/ldc-1.38.0/activate
    DCMP=ldmd2
@@ -29,7 +28,7 @@ ldc2 -version
 
 cd ..
 rm -rf build
-if [[ "${ARCH}" == "aarch64"* ]]; then
+if [[ "${target_platform}" == "linux-aarch64" ]]; then
     deactivate
 fi
 
