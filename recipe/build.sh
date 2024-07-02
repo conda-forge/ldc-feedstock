@@ -2,9 +2,14 @@
 set -eu -o pipefail
 set -x
 
+BOOTSTRAP=false
+if [[ "${build_platform}" == "osx-arm64" ]]; then
+    BOOTSTRAP=true
+fi
+
 # In the future we can just use mamba install to get a previous version on all platforms
-if [[ "${build_platform}" == "linux-aarch64" ]]; then
-    LDC_VERSION=1.26.0 # Latest version that works with glibc 2.17
+if [[ $BOOTSTRAP ]]; then
+    LDC_VERSION=1.38.0 # Try using newest version first
     curl -fsS https://dlang.org/install.sh | bash -s ldc-$LDC_VERSION
     source ~/dlang/ldc-$LDC_VERSION/activate
     ldc2 -version
@@ -29,7 +34,7 @@ ldc2 -version
 
 cd ..
 rm -rf build
-if [[ "${build_platform}" == "linux-aarch64" ]]; then
+if [[ $BOOTSTRAP ]]; then
     deactivate
 fi
 
