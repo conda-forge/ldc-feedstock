@@ -14,7 +14,7 @@ source:
   sha256: 51661c30983b94a05b1dbcfc5330e0300ea14609c8088d14f0ff34453b99b641  # [win]
 
 build:
-  number: 0
+  number: 2
   skip: true  # [win and vc<14]
 
 requirements:
@@ -56,3 +56,4 @@ extra:
   recipe-maintainers:
     - brainstorm
     - martin-g
+    - corneliusroemer
