@@ -8,7 +8,7 @@ if [[ "${build_platform}" == "osx-arm64" ]]; then
 fi
 
 # In the future we can just use mamba install to get a previous version on all platforms
-if [[ $BOOTSTRAP ]]; then
+if [[ $BOOTSTRAP == "true" ]]; then
     LDC_VERSION=1.38.0 # Try using newest version first
     curl -fsS https://dlang.org/install.sh | bash -s ldc-$LDC_VERSION
     source ~/dlang/ldc-$LDC_VERSION/activate
@@ -34,7 +34,7 @@ ldc2 -version
 
 cd ..
 rm -rf build
-if [[ $BOOTSTRAP ]]; then
+if [[ $BOOTSTRAP == "true" ]]; then
     deactivate
 fi
 
