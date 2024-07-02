@@ -32,7 +32,8 @@ requirements:
     - libedit                    # [unix]
     - ncurses                    # [unix]
     - curl                       # [unix]
-    - clangdev >=6,<=12          # [unix]
+    # Based on "Platform Support" in the release notes
+    - clangdev >=11,<=18         # [unix]
     - llvmdev                    # [unix]
     - llvm                       # [unix]
 
