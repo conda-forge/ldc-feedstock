@@ -16,7 +16,7 @@ source:
 build:
   number: 0
   skip: true  # [win and vc<14]
-  run_export:
+  run_exports:
     - llvm >=15,<=18
 
 requirements:
