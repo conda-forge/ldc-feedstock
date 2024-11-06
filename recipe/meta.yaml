@@ -16,8 +16,6 @@ source:
 build:
   number: 0
   skip: true  # [win and vc<14]
-  run_exports:
-    - llvm >=15,<=18
 
 requirements:
   build:
@@ -28,7 +26,7 @@ requirements:
     - cmake                      # [unix]
     - make                       # [unix]
     - ninja                      # [unix]
-    - clangdev >=15,<=18         # [unix]
+    - clangdev                   # [unix]
     - llvmdev                    # [unix]
     - llvm                       # [unix]
     - 7za                        # [win]
@@ -37,10 +35,8 @@ requirements:
     - libedit                    # [unix]
     - ncurses                    # [unix]
     - curl                       # [unix]
-    # Based on "Platform Support" in the release notes
-    - clangdev >=15,<=18         # [unix]
-    - llvmdev                    # [unix]
-    - llvm                       # [unix]
+  run:
+    - llvm >=15,<=18
 
 test:
   commands:
