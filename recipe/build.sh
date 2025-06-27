@@ -10,7 +10,7 @@ if [[ "${build_platform}" == "linux-aarch64" ]]; then
     ldc2 -version
     DCMP=ldmd2
 else
-    mamba install -y ldc -p ${BUILD_PREFIX}
+    mamba install -y ldc=1.26.0 -p ${BUILD_PREFIX}
     DCMP=${BUILD_PREFIX}/bin/ldmd2
 fi
 
