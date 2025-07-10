@@ -8,7 +8,7 @@ DCMP=${BUILD_PREFIX}/bin/ldmd2
 mkdir build
 cd build
 cmake -G Ninja \
-    {CMAKE_ARGS} \
+    ${CMAKE_ARGS} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
     -DCMAKE_INSTALL_PREFIX="$PREFIX" \
