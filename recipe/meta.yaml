@@ -1,5 +1,5 @@
 {% set name = "ldc" %}
-{% set version = "1.39.0" %}
+{% set version = "1.41.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,17 +7,17 @@ package:
 
 source:
   url: https://github.com/ldc-developers/ldc/releases/download/v{{ version }}/ldc-{{ version }}-src.tar.gz  # [unix]
-  sha256: 839bac36f6073318e36f0b163767e03bdbd3f57d99256b97494ac439b59a4562  # [unix]
+  sha256: af52818b60706106fb8bca2024685c54eddce929edccae718ad9fbcf689f222f  # [unix]
 
   # Use the pre-built binaries for windows.
   url: https://github.com/ldc-developers/ldc/releases/download/v{{ version }}/ldc2-{{ version }}-windows-x64.7z  # [win]
-  sha256: a6d3e35abd5447ae8ea9d7b34b29023e91cda8aa095f6d6eca7edb1ac114f6e8  # [win]
+  sha256: 1db11e5eeed10236729d45cde861fb5197d1cc716b4186600fca7fc6bb48c810  # [win]
 
 build:
   number: 0
   skip: true  # [win and vc<14]
   run_exports:
-    - llvm >=15,<=18
+    - llvm >=15,<=20
 
 requirements:
   build:
@@ -28,7 +28,7 @@ requirements:
     - cmake                      # [unix]
     - make                       # [unix]
     - ninja                      # [unix]
-    - clangdev >=15,<=18         # [unix]
+    - clangdev >=15,<=20         # [unix]
     - llvmdev                    # [unix]
     - llvm                       # [unix]
     - 7za                        # [win]
@@ -38,7 +38,7 @@ requirements:
     - ncurses                    # [unix]
     - curl                       # [unix]
     # Based on "Platform Support" in the release notes
-    - clangdev >=15,<=18         # [unix]
+    - clangdev >=15,<=20         # [unix]
     - llvmdev                    # [unix]
     - llvm                       # [unix]
 
