@@ -10,19 +10,20 @@ if [[ "${build_platform}" == "linux-aarch64" ]]; then
     ldc2 -version
     DCMP=ldmd2
 else
-    mamba install -y ldc -p ${BUILD_PREFIX}
+    mamba install -y ldc -p "${BUILD_PREFIX}"
     DCMP=${BUILD_PREFIX}/bin/ldmd2
 fi
 
 mkdir build
 cd build
 cmake -G Ninja \
-    ${CMAKE_ARGS} \
+    "${CMAKE_ARGS}" \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=$PREFIX \
-    -DCMAKE_PREFIX_PATH=$PREFIX \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+    -DCMAKE_INSTALL_PREFIX="$PREFIX" \
+    -DCMAKE_PREFIX_PATH="$PREFIX" \
     -DBUILD_SHARED_LIBS=ON \
-    -DD_COMPILER=$DCMP \
+    -DD_COMPILER="$DCMP" \
     ..
 ninja install
 ldc2 -version
@@ -37,12 +38,13 @@ fi
 mkdir build
 cd build
 cmake -G Ninja \
-    ${CMAKE_ARGS} \
+    "${CMAKE_ARGS}" \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=$PREFIX \
-    -DCMAKE_PREFIX_PATH=$PREFIX \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+    -DCMAKE_INSTALL_PREFIX="$PREFIX" \
+    -DCMAKE_PREFIX_PATH="$PREFIX" \
     -DBUILD_SHARED_LIBS=BOTH \
-    -DD_COMPILER=${PREFIX}/bin/ldmd2 \
+    -DD_COMPILER="${PREFIX}/bin/ldmd2" \
     ..
 ninja install
 ldc2 -version
