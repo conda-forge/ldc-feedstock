@@ -14,7 +14,7 @@ source:
   sha256: a6d3e35abd5447ae8ea9d7b34b29023e91cda8aa095f6d6eca7edb1ac114f6e8  # [win]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
   run_exports:
     - llvm >=15,<=18
